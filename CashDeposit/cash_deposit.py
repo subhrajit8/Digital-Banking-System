@@ -1,10 +1,10 @@
-import numpy as np
-import sys
-sys.path.insert(1,'C://Users//jsubh//OneDrive//Documents//Wallet//AccountStatus')
-import account_status
+from Packages.packages import *
+# import sys
+# sys.path.insert(1,'C://Users//jsubh//OneDrive//Documents//Wallet//AccountStatus')
+from AccountStatus.account_status import *
 def deposit(my_db,accnt_no,entered_Mob):
     mycursor = my_db.cursor()
-    result = account_status.check_status(my_db,accnt_no,entered_Mob)
+    result = check_status(my_db,accnt_no,entered_Mob)
     if result == True :
         PIN = np.random.randint(1000,9999)
         print(PIN)
