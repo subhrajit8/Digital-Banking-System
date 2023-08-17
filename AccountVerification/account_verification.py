@@ -1,14 +1,15 @@
-import sys
-sys.path.insert(1,'C://Users//jsubh//OneDrive//Documents//Wallet')
-import regex
-def verify_accnt(my_db,accnt_no):
-    match = regex.account(accnt_no)
+from Regex.regex import *
+
+def verify_accnt_no(accnt_no, cursor):
+
+    match = account(accnt_no)
+
     if match : 
-        mycursor = my_db.cursor()
+        # mycursor = my_db.cursor()
         query = "SELECT accnt_no FROM details WHERE accnt_no = %s"
         values = (accnt_no,)
-        mycursor.execute(query,values)
-        a = mycursor.fetchone()
+        cursor.execute(query,values)
+        a = cursor.fetchone()
         if a is None :
             return False
         else :
