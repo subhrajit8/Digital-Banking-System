@@ -7,7 +7,14 @@ from CashDeposit.cash_deposit import *
 from CashWithdrawal.cash_withdrawal import *
 
 def balance_check(accnt_no):
-    cursor = connect_database()
+
+    db = connect_database()
+    cursor = db.cursor()
+    # cursor.execute("SELECT * FROM details")
+    # res = cursor.fetchall()
+
+    # for row in res:
+    #     print(row)
 
     if verify_accnt_no(accnt_no, cursor):
         entered_Mobile = int(input("Enter the Mobile Number : "))
@@ -16,8 +23,8 @@ def balance_check(accnt_no):
         cursor.execute(query,values)
         Mobile = cursor.fetchone()[0]
         if Mobile == entered_Mobile:
-            if check_status(accnt_no, cursor):
-                return check_balance(accnt_no, cursor)
+            if check_status(accnt_no):
+                return check_balance(accnt_no)
             else:
                 return "Account Inactive."
         else:

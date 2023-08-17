@@ -1,6 +1,4 @@
 from Packages.packages import *
-# import sys
-# sys.path.insert(1,'C://Users//jsubh//OneDrive//Documents//Wallet//AccountStatus')
 from AccountStatus.account_status import *
 def deposit(my_db,accnt_no,entered_Mob):
     mycursor = my_db.cursor()

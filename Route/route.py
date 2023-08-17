@@ -9,13 +9,6 @@ from workflow import *
 
 rout = Blueprint("route",__name__)
 
-
-# cursor.execute("SELECT * FROM details")
-# res = cursor.fetchall()
-
-# for row in res:
-#     print(row)
-
 # @rout.route('/account_verification', methods=['GET'])
 # def check_account_route():
 #     data = request.get_json()
@@ -36,8 +29,8 @@ rout = Blueprint("route",__name__)
 
 @rout.route('/balance_enquiry', methods=['GET'])
 def balance_enquiry():
-    accnt_no = request.get_json()
-    return (balance_check(accnt_no))
+    data = request.get_json()
+    return (balance_check(data['accnt_no']))
 
 # def check_balance_route():
 #     data = request.get_json()

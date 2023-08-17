@@ -1,5 +1,3 @@
-# import sys
-# sys.path.insert(1,'C://Users//jsubh//OneDrive//Documents//Wallet')
 from Regex.regex import *
 
 def verify_accnt_no(accnt_no, cursor):

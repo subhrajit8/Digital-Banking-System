@@ -1,8 +1,7 @@
 from Packages.packages import *
 
 def account(accnt_no) :
-    match = re.match("^[0-9][0-9]{18}$",str(accnt_no)) 
-    if match : 
+    if re.match(r'^\d{19}$',str(accnt_no)): 
         return True
     else :
         return False
