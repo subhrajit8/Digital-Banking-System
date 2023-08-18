@@ -36,7 +36,7 @@ def generate_pin():
     PIN = np.random.randint(1000,9999)
     port = 465
     smtp_server = "smtp.gmail.com"
-    sender_email = "b319053@iiit-bh.ac.in"
+    sender_email = ""
     receiver_email = input("Enter email id : ")
     password = getpass("Enter your password : ")
     message = """\
